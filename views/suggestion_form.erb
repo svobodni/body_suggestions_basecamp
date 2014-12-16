@@ -1,8 +1,18 @@
-<form method="post" name="suggestion_form" action="suggestion"> 
-	<label for="suggestion_subject">Předmět podnětu:</label>
-	<input type="text" name="suggestion_subject" id="suggestion_subject"><br>
-	<label for="suggestion_text">Text podnětu:</label><br>
-	<input type="textarea"  name="suggestion_text" id="suggestion_text"><br>
-    <input type="submit" value="Odeslat">
+<style type="text/css"> 
+#suggestion-form #suggestion_text {
+  min-height: 18em;
+}
+</style>
+
+<form id="suggestion-form" method="post" name="suggestion_form" action="suggestion"> 
+    <div class="form-group">
+        <label for="suggestion_subject">Předmět podnětu:</label>
+        <input type="text" class="form-control" name="suggestion_subject" id="suggestion_subject">
+    </div>
+    <div class="form-group">
+        <label for="suggestion_text">Text podnětu:</label>
+        <textarea name="suggestion_text" class="form-control" id="suggestion_text"></textarea>
+    </div>
+    <input class="btn btn-primary" id="suggestion_submit" type="submit" value="Odeslat">
 </form>
 
