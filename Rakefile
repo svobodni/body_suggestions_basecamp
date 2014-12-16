@@ -3,16 +3,6 @@ task :generate_layout do
 	require 'yaml'
 	require 'open-uri'
 	
-	config = YAML.load_file('config.yml')
-	
-	app_config = config["application"]
-	template = Processor.new
-	template.fetch
-	template.head = ''	
-	template.title = "#{app_config["title"]}"
-    template.breadcrumb = ''
-    template.store
-
 	class Processor
 
 		attr_accessor :output
@@ -49,4 +39,15 @@ task :generate_layout do
 	      file.close
 		end
 	end		
+
+	
+	config = YAML.load_file('config.yml')
+	
+	app_config = config["application"]
+	template = Processor.new
+	template.fetch
+	template.head = ''	
+	template.title = "#{app_config["title"]}"
+    template.breadcrumb = ''
+    template.store
 end
